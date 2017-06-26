@@ -2,8 +2,8 @@ FROM lsiobase/alpine:3.6
 MAINTAINER saarg
 
 # package version
+ARG TZ="Asia/Seoul"
 ARG ARGTABLE_VER="2.13"
-ARG TZ="Europe/Oslo"
 ARG XMLTV_VER="0.5.69"
 
 # set version label
