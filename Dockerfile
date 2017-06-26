@@ -36,6 +36,8 @@ RUN \
 	libtool \
 	libxml2-dev \
 	libxslt-dev \
+	libdvbcsa-dev \
+	libva-dev \
 	make \
 	mercurial \
 	libressl-dev \
@@ -135,22 +137,15 @@ RUN \
  git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
  cd /tmp/tvheadend && \
  ./configure \
-	--disable-ffmpeg_static \
-	--disable-hdhomerun_static \
-	--disable-libfdkaac_static \
-	--disable-libmfx_static \
-	--disable-libtheora_static \
-	--disable-libvorbis_static \
-	--disable-libvpx_static \
-	--disable-libx264_static \
-	--disable-libx265_static \
+	--enable-qsv \
+	--enable-dvbcsa \
 	--enable-hdhomerun_client \
 	--enable-libav \
 	--infodir=/usr/share/info \
 	--localstatedir=/var \
 	--mandir=/usr/share/man \
 	--prefix=/usr \
-	--sysconfdir=/config && \
+	--sysconfdir=/home/tv/cfg && \
  make && \
  make install && \
 
@@ -196,6 +191,9 @@ RUN \
 	ffmpeg \
 	ffmpeg-libs \
 	libhdhomerun-libs \
+	libdvbcsa \
+	libva \
+	libva-intel-driver \
 	libxml2 \
 	libxslt && \
  apk add --no-cache \
@@ -211,6 +209,9 @@ RUN \
 
 # copy local files
 COPY root/ /
+
+# install dependencies for epg2xml
+RUN apk add --no-cache php7 php7-json php7-dom php7-mbstring php7-openssl php7-curl && \
 
 # add picons
 ADD picons.tar.bz2 /picons
