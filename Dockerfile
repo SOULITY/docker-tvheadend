@@ -19,10 +19,11 @@ COPY patches/ /tmp/patches/
 
 # install build packages
 RUN \
-    mkdir -p \
-        /home/tv/cfg
+    mkdir -p /home/tv/cfg
 RUN \
-    apk add --no-cache --virtual=build-dependencies \
+    apk add \
+        --no-cache \
+	--virtual=build-dependencies \
         autoconf \
         automake \
         cmake \
@@ -40,7 +41,7 @@ RUN \
         libxml2-dev \
         libxslt-dev \
         libdvbcsa-dev \
-#        libva-dev \
+        libva-dev \
         make \
         mercurial \
         libressl-dev \
@@ -53,12 +54,15 @@ RUN \
         wget \
         zlib-dev
 RUN \
-    apk add --no-cache --virtual=build-dependencies --repository http://nl.alpinelinux.org/alpine/edge/testing \
+    apk add \
+        --no-cache \
+	--virtual=build-dependencies --repository http://nl.alpinelinux.org/alpine/edge/testing \
         gnu-libiconv-dev
 
 # add runtime dependencies required in build stage
 RUN \
-    apk add --no-cache \
+    apk add \
+        --no-cache \
         bsd-compat-headers \
         bzip2 \
         curl \
@@ -134,17 +138,22 @@ RUN \
 
 # build dvb-apps
 RUN \
-    hg clone http://linuxtv.org/hg/dvb-apps /tmp/dvb-apps && \
-    cd /tmp/dvb-apps && \
-    make -C lib && \
+    hg clone http://linuxtv.org/hg/dvb-apps /tmp/dvb-apps
+WORKDIR \
+    /tmp/dvb-apps
+RUN \
+    make -C lib
+RUN \
     make -C lib install
 
 # build tvheadend
 RUN \
-    git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
-    cd /tmp/tvheadend && \
+    git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend
+WORKDIR \
+    /tmp/tvheadend
+RUN \
     ./configure \
-#        --enable-qsv \
+        --enable-qsv \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
@@ -152,16 +161,19 @@ RUN \
         --localstatedir=/var \
         --mandir=/usr/share/man \
         --prefix=/usr \
-        --sysconfdir=/home/tv/cfg && \
-    make && \
+        --sysconfdir=/home/tv/cfg
+RUN \
+    make
+RUN \
     make install
 
 # build XMLTV
 RUN \
-    curl -o /tmp/xmtltv-src.tar.bz2 -L \
-        "https://jaist.dl.sourceforge.net/project/xmltv/xmltv/${XMLTV_VER}/xmltv-${XMLTV_VER}.tar.bz2" && \
-    tar xf /tmp/xmtltv-src.tar.bz2 -C \
-        /tmp --strip-components=1 && \
+    curl -o /tmp/xmtltv-src.tar.bz2 \
+	-L "https://jaist.dl.sourceforge.net/project/xmltv/xmltv/${XMLTV_VER}/xmltv-${XMLTV_VER}.tar.bz2"
+RUN \
+    tar xf /tmp/xmtltv-src.tar.bz2 \
+        -C /tmp --strip-components=1 && \
     cd "/tmp/xmltv-${XMLTV_VER}" && \
     /bin/echo -e "yes" | perl Makefile.PL PREFIX=/usr/ INSTALLDIRS=vendor && \
     make && \
