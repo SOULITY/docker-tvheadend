@@ -2,15 +2,15 @@
 
 # make folders
 mkdir -p \
-	/config/comskip
+	/home/tv/cfg/comskip
 
 # copy config
-[[ ! -e /config/dvr/config ]] && \
-	(mkdir -p /config/dvr/config && cp /defaults/7a5edfbe189851e5b1d1df19c93962f0 /config/dvr/config/7a5edfbe189851e5b1d1df19c93962f0)
-[[ ! -e /config/comskip/comskip.ini ]] && \
-	cp /defaults/comskip.ini.org /config/comskip/comskip.ini
+[[ ! -e /home/tv/cfg/dvr/config ]] && \
+	(mkdir -p /home/tv/cfg/dvr/config && cp /defaults/7a5edfbe189851e5b1d1df19c93962f0 /home/tv/cfg/dvr/config/7a5edfbe189851e5b1d1df19c93962f0)
+[[ ! -e /home/tv/cfg/comskip/comskip.ini ]] && \
+	cp /defaults/comskip.ini.org /home/tv/cfg/comskip/comskip.ini
 
 # permissions
 chown -R abc:abc \
-	/config \
+	/home/tv/cfg/ \
 	/picons
