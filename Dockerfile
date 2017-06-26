@@ -1,5 +1,4 @@
 FROM lsiobase/alpine:3.5
-# FROM lsiobase/alpine:latest
 MAINTAINER SOULITY
 
 # package version
