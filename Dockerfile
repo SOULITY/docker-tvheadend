@@ -167,19 +167,19 @@ RUN \
 #        --sysconfdir=/home/tv/cfg
 RUN \
     ./configure \
+        --build=x86_64-pc-linux-gnu \
+        --host=x86_64-pc-linux-gnu \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
+	--enable-vaapi \
         --infodir=/usr/share/info \
         --localstatedir=/var \
         --mandir=/usr/share/man \
         --prefix=/usr \
-        --sysconfdir=/home/tv/cfg \
-        --build=x86_64-pc-linux-gnu \
-        --host=x86_64-pc-linux-gnu \
-	--enable-vaapi \
 	--datadir=/usr/share \
-	--libdir=/usr/lib64
+	--libdir=/usr/lib64 \
+        --sysconfdir=/home/tv/cfg \
 RUN \
     make
 RUN \
