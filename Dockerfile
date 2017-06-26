@@ -152,8 +152,10 @@ RUN \
 WORKDIR \
     /tmp/tvheadend
 RUN \
+    git checkout codecs
+RUN \
     ./configure \
-        --enable-qsv \
+        #--enable-qsv \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
@@ -161,7 +163,13 @@ RUN \
         --localstatedir=/var \
         --mandir=/usr/share/man \
         --prefix=/usr \
-        --sysconfdir=/home/tv/cfg
+        --sysconfdir=/home/tv/cfg \
+	 # 0.1
+        --build=x86_64-pc-linux-gnu \
+        --host=x86_64-pc-linux-gnu \
+	--enable-vaapi \
+	--datadir=/usr/share \
+	--libdir=/usr/lib64
 RUN \
     make
 RUN \
@@ -245,6 +253,8 @@ RUN \
 	php7-mbstring \
 	php7-openssl \
 	php7-curl
+WORKDIR \
+    /
 
 # ports and volumes
 EXPOSE \
