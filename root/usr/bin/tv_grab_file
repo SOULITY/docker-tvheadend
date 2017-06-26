@@ -4,7 +4,7 @@ vflag=
 cflag=
 if (( $# < 1 ))
 then
-  cat /config/data/*.xml
+  cat /home/tv/cfg/data/*.xml
   exit 0
 fi
 
