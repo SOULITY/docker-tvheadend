@@ -215,8 +215,8 @@ RUN \
         ffmpeg-libs \
         libhdhomerun-libs \
         libdvbcsa \
-#        libva \
-#        libva-intel-driver \
+        libva \
+        libva-intel-driver \
         libxml2 \
         libxslt
 RUN \
