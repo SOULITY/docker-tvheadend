@@ -193,7 +193,7 @@ apk add --no-cache \
     libhdhomerun-libs \
     libdvbcsa \
     libva \
-#    libva-intel-driver \
+    libva-intel-driver \
     libxml2 \
     libxslt && \
 apk add --no-cache \
