@@ -271,5 +271,6 @@ EXPOSE \
     9981 \
     9982
 VOLUME \
+    /dev \
     /home/tv/cfg \
     /home/tv/rec
