@@ -12,7 +12,7 @@ ARG VERSION
 LABEL build_version="Build-date:- ${BUILD_DATE}"
 
 # environment settings
-ENV HOME="/config"
+ENV HOME="/home/tv/cfg"
 
 # copy patches
 COPY patches/ /tmp/patches/
