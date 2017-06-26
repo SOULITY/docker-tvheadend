@@ -233,8 +233,7 @@ RUN \
         /tmp/*
 
 # copy local files
-RUN \
-    COPY root/ /
+COPY root/ /
 
 # install dependencies for epg2xml
 RUN \
