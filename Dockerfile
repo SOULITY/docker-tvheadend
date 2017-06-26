@@ -246,9 +246,6 @@ RUN \
 	php7-openssl \
 	php7-curl
 
-# add picons
-# ADD picons.tar.bz2 /picons
-
 # ports and volumes
 EXPOSE \
     9981 \
