@@ -138,6 +138,9 @@ RUN \
 
 # build tvheadend
 RUN \
+    mkdir -p \
+        /home/tv/cfg
+RUN \
     git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
     cd /tmp/tvheadend && \
     ./configure \
@@ -168,7 +171,8 @@ RUN \
 # build argtable2
 RUN \
     ARGTABLE_VER1="${ARGTABLE_VER//./-}" && \
-    mkdir -p /tmp/argtable && \
+    mkdir -p \
+        /tmp/argtable && \
     curl -o \
         /tmp/argtable-src.tar.gz -L \
         "https://sourceforge.net/projects/argtable/files/argtable/argtable-${ARGTABLE_VER}/argtable${ARGTABLE_VER1}.tar.gz" && \
