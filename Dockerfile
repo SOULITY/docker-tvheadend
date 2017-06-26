@@ -125,15 +125,17 @@ RUN apk add --no-cache \
 # install perl modules for xmltv
 RUN \
 curl -L http://cpanmin.us | perl - App::cpanminus && \
-cpanm --installdeps /tmp/patches && \
+cpanm --installdeps /tmp/patches
 
 # build dvb-apps
+RUN \
 hg clone http://linuxtv.org/hg/dvb-apps /tmp/dvb-apps && \
 cd /tmp/dvb-apps && \
 make -C lib && \
-make -C lib install && \
+make -C lib install
 
 # build tvheadend
+RUN \
 git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
 cd /tmp/tvheadend && \
 ./configure \
