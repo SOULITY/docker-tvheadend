@@ -19,6 +19,9 @@ COPY patches/ /tmp/patches/
 
 # install build packages
 RUN \
+    mkdir -p \
+        /home/tv/cfg
+RUN \
     apk add --no-cache --virtual=build-dependencies \
         autoconf \
         automake \
@@ -37,7 +40,7 @@ RUN \
         libxml2-dev \
         libxslt-dev \
         libdvbcsa-dev \
-        libva-dev \
+#        libva-dev \
         make \
         mercurial \
         libressl-dev \
@@ -138,13 +141,10 @@ RUN \
 
 # build tvheadend
 RUN \
-    mkdir -p \
-        /home/tv/cfg
-RUN \
     git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend && \
     cd /tmp/tvheadend && \
     ./configure \
-        --enable-qsv \
+#        --enable-qsv \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
@@ -203,8 +203,8 @@ RUN \
         ffmpeg-libs \
         libhdhomerun-libs \
         libdvbcsa \
-        libva \
-        libva-intel-driver \
+#        libva \
+#        libva-intel-driver \
         libxml2 \
         libxslt
 RUN \
