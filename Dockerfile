@@ -148,7 +148,8 @@ RUN \
 
 # build tvheadend
 RUN \
-    git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend
+    #git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend
+    git clone https://github.com/lekma/tvheadend.git /tmp/tvheadend
 WORKDIR \
     /tmp/tvheadend
 RUN \
