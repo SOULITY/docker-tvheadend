@@ -156,7 +156,6 @@ RUN \
     git checkout codecs
 #RUN \
 #    ./configure \
-#        --enable-qsv \
 #        --enable-dvbcsa \
 #        --enable-hdhomerun_client \
 #        --enable-libav \
