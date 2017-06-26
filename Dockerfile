@@ -61,7 +61,7 @@ RUN \
         curl \
         gzip \
         libcrypto1.0 \
-        libcurl    \
+        libcurl \
         libressl \
         libssl1.0 \
         linux-headers \
