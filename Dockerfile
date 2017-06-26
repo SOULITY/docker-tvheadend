@@ -182,7 +182,7 @@ RUN \
  ./autogen.sh && \
  ./configure \
 	--bindir=/usr/bin \
-	--sysconfdir=/config/comskip && \
+	--sysconfdir=/home/tv/cfg/comskip && \
  make && \
  make install && \
 
@@ -204,7 +204,7 @@ RUN \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
-	/config/.cpanm \
+	/home/tv/cfg/.cpanm \
 	/tmp/*
 
 # copy local files
@@ -218,4 +218,4 @@ ADD picons.tar.bz2 /picons
 
 # ports and volumes
 EXPOSE 9981 9982
-VOLUME /config /recordings
+VOLUME /home/tv/cfg /home/tv/rec
