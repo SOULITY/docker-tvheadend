@@ -148,37 +148,20 @@ RUN \
 
 # build tvheadend
 RUN \
-    #git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend
-    git clone https://github.com/lekma/tvheadend.git /tmp/tvheadend
+    git clone https://github.com/tvheadend/tvheadend.git /tmp/tvheadend
 WORKDIR \
     /tmp/tvheadend
 RUN \
-    git checkout codecs
-#RUN \
-#    ./configure \
-#        --enable-dvbcsa \
-#        --enable-hdhomerun_client \
-#        --enable-libav \
-#        --infodir=/usr/share/info \
-#        --localstatedir=/var \
-#        --mandir=/usr/share/man \
-#        --prefix=/usr \
-#        --sysconfdir=/home/tv/cfg
-RUN \
     ./configure \
-        --build=x86_64-pc-linux-gnu \
-        --host=x86_64-pc-linux-gnu \
+        --enable-qsv \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
-	--enable-vaapi \
         --infodir=/usr/share/info \
         --localstatedir=/var \
         --mandir=/usr/share/man \
         --prefix=/usr \
-	--datadir=/usr/share \
-	--libdir=/usr/lib64 \
-        --sysconfdir=/home/tv/cfg \
+        --sysconfdir=/home/tv/cfg
 RUN \
     make
 RUN \
