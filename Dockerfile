@@ -154,9 +154,19 @@ WORKDIR \
     /tmp/tvheadend
 RUN \
     git checkout codecs
+#RUN \
+#    ./configure \
+#        --enable-qsv \
+#        --enable-dvbcsa \
+#        --enable-hdhomerun_client \
+#        --enable-libav \
+#        --infodir=/usr/share/info \
+#        --localstatedir=/var \
+#        --mandir=/usr/share/man \
+#        --prefix=/usr \
+#        --sysconfdir=/home/tv/cfg
 RUN \
     ./configure \
-        #--enable-qsv \
         --enable-dvbcsa \
         --enable-hdhomerun_client \
         --enable-libav \
@@ -165,7 +175,6 @@ RUN \
         --mandir=/usr/share/man \
         --prefix=/usr \
         --sysconfdir=/home/tv/cfg \
-	 # 0.1
         --build=x86_64-pc-linux-gnu \
         --host=x86_64-pc-linux-gnu \
 	--enable-vaapi \
