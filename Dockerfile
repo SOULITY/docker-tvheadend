@@ -175,7 +175,7 @@ RUN \
         /tmp/argtable && \
     curl -o \
         /tmp/argtable-src.tar.gz -L \
-        "https://sourceforge.net/projects/argtable/files/argtable/argtable-${ARGTABLE_VER}/argtable${ARGTABLE_VER1}.tar.gz" && \
+        "https://jaist.dl.sourceforge.net/project/argtable/argtable/argtable-${ARGTABLE_VER}/argtable${ARGTABLE_VER1}.tar.gz" && \
     tar xf /tmp/argtable-src.tar.gz -C \
         /tmp/argtable --strip-components=1 && \
     cd /tmp/argtable && \
