@@ -234,5 +234,9 @@ RUN \
 # ADD picons.tar.bz2 /picons
 
 # ports and volumes
-EXPOSE 9981 9982
-VOLUME /home/tv/cfg /home/tv/rec
+EXPOSE \
+    9981 \
+    9982
+VOLUME \
+    /home/tv/cfg \
+    /home/tv/rec
