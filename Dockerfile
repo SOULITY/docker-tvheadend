@@ -237,7 +237,8 @@ COPY root/ /
 
 # install dependencies for epg2xml
 RUN \
-    apk add --no-cache \
+    apk add \
+        --no-cache \
         php7 \
 	php7-json \
 	php7-dom \
