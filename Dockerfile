@@ -18,8 +18,7 @@ ENV HOME="/home/tv/cfg"
 COPY patches/ /tmp/patches/
 
 # install build packages
-RUN \
-apk add --no-cache --virtual=build-dependencies \
+RUN apk add --no-cache --virtual=build-dependencies \
     autoconf \
     automake \
     cmake \
@@ -48,13 +47,13 @@ apk add --no-cache --virtual=build-dependencies \
     sdl-dev \
     uriparser-dev \
     wget \
-    zlib-dev && \
-apk add --no-cache --virtual=build-dependencies \
+    zlib-dev
+RUN apk add --no-cache --virtual=build-dependencies \
     --repository http://nl.alpinelinux.org/alpine/edge/testing \
-    gnu-libiconv-dev && \
+    gnu-libiconv-dev
 
 # add runtime dependencies required in build stage
-apk add --no-cache \
+RUN apk add --no-cache \
     bsd-compat-headers \
     bzip2 \
     curl \
@@ -121,9 +120,10 @@ apk add --no-cache \
     tar \
     uriparser \
     wget \
-    zlib && \
+    zlib
 
 # install perl modules for xmltv
+RUN \
 curl -L http://cpanmin.us | perl - App::cpanminus && \
 cpanm --installdeps /tmp/patches && \
 
