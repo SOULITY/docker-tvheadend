@@ -234,6 +234,7 @@ RUN \
 
 # copy local files
 COPY root/ /
+WORKDIR /
 
 # install dependencies for epg2xml
 RUN \
@@ -245,14 +246,12 @@ RUN \
 	php7-mbstring \
 	php7-openssl \
 	php7-curl
-#WORKDIR \
-#    /
 
 # ports and volumes
 EXPOSE \
     9981 \
     9982
 VOLUME \
-    /dev \
+    /dev/dri \
     /home/tv/cfg \
     /home/tv/rec
