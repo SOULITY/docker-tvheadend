@@ -252,6 +252,5 @@ EXPOSE \
     9981 \
     9982
 VOLUME \
-    /dev/dri \
     /home/tv/cfg \
     /home/tv/rec
