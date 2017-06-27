@@ -1,4 +1,4 @@
-Tvheadend with VAAPI for KOREAN, based on "lsiobase/alpine:3.5, linuxserver/docker-tvheadend"
+Tvheadend with VAAPI for KOREAN, based on "lsiobase/alpine AND linuxserver/docker-tvheadend"
 
 USE:
 
