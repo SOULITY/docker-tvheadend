@@ -1,4 +1,5 @@
-Tvheadend with VAAPI for KOREAN, based on "lsiobase/alpine AND linuxserver/docker-tvheadend"
+Tvheadend with VAAPI(ffmpeg) for KOREAN.
+This docker based on <lsiobase/alpine> & <linuxserver/docker-tvheadend>
 
 USE:
 
