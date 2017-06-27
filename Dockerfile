@@ -245,8 +245,8 @@ RUN \
 	php7-mbstring \
 	php7-openssl \
 	php7-curl
-WORKDIR \
-    /
+#WORKDIR \
+#    /
 
 # ports and volumes
 EXPOSE \
