@@ -143,15 +143,15 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
-      --enable-libva \
+      --enable-ffmpeg_static \
+      --enable-libav \
       --enable-vaapi \
-      --prefix=/usr \
-      --mandir=/usr/share/man \
+      --enable-hdhomerun_client \
       --infodir=/usr/share/info \
-      --datadir=/usr/share \
-      --sysconfdir=/home/tv/cfg \
-      --localstatedir=/var/lib \
-      --libdir=/usr/lib64 && \
+      --localstatedir=/var \
+      --mandir=/usr/share/man \
+      --prefix=/usr \
+      --sysconfdir=/home/tv/cfg && \
    make && \
    make install && \
 
