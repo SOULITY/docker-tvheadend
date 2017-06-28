@@ -205,6 +205,8 @@ RUN \
       --no-cache \
       ffmpeg \
       ffmpeg-libs \
+      libva \
+      libva-intel-driver \
       libhdhomerun-libs \
       libxml2 \
       libxslt && \
