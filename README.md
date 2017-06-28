@@ -5,7 +5,8 @@ This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
 Base-4.3(latest) \
 Tvheadend 4.3(Official) base. \
 Base-4.1 \
-Tvheadend 4.1(lekma custom) base.
+Tvheadend 4.1(lekma custom) base. \
+** This docker is being tested. DO NOT USE.
 
 ## Usage
 
