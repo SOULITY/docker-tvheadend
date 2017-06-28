@@ -6,7 +6,8 @@ Tvheadend 4.3(Official) base. \
 Base-4.1 \
 Tvheadend 4.1(lekma custom) base.
 
-## USE:
+## Usage:
+
 ```
 docker create \
     --privileged \
