@@ -19,7 +19,7 @@ COPY patches/ /tmp/patches/
 
 # install build packages
 RUN \
-   apk add \
+   apk --update add \
       --no-cache \
       --virtual=build-dependencies \
       autoconf \
@@ -49,14 +49,14 @@ RUN \
       uriparser-dev \
       wget \
       zlib-dev && \
-   apk add \
+   apk --update add \
       --no-cache \
       --virtual=build-dependencies \
       --repository http://nl.alpinelinux.org/alpine/edge/testing \
       gnu-libiconv-dev && \
 
 # add runtime dependencies required in build stage
-   apk add \
+   apk --update add \
       --no-cache \
       bsd-compat-headers \
       bzip2 \
@@ -201,20 +201,20 @@ RUN \
    make install && \
 
 # install runtime packages
-   apk add \
+   apk --update add \
       --no-cache \
       ffmpeg \
       ffmpeg-libs \
       libhdhomerun-libs \
       libxml2 \
       libxslt && \
-   apk add \
+   apk --update add \
       --no-cache \
       --repository http://nl.alpinelinux.org/alpine/edge/testing \
       gnu-libiconv && \
    
 # install php for epg2xml.php
-   apk add \
+   apk --update add \
       --no-cache \
       php7 \
       php7-json \
