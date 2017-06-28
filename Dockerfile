@@ -38,6 +38,7 @@ RUN \
       libtool \
       libxml2-dev \
       libxslt-dev \
+      libva-dev \
       make \
       mercurial \
       libressl-dev \
