@@ -39,7 +39,7 @@ RUN \
       libxml2-dev \
       libxslt-dev \
       libva-dev \
-      opus-dev \
+      opus-tools \
       make \
       mercurial \
       libressl-dev \
