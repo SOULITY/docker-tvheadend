@@ -143,10 +143,13 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
+      --enable-ffmpeg \
       --enable-ffmpeg_static \
       --enable-libav \
+      --enable-libx264 \
+      --enable-libx265 \
+      --enable-libfdkaac \
       --enable-vaapi \
-      --enable-hdhomerun_client \
       --infodir=/usr/share/info \
       --localstatedir=/var \
       --mandir=/usr/share/man \
