@@ -205,8 +205,6 @@ RUN \
       --no-cache \
       ffmpeg \
       ffmpeg-libs \
-      libva \
-      libva-intel-driver \
       libhdhomerun-libs \
       libxml2 \
       libxslt && \
@@ -215,9 +213,11 @@ RUN \
       --repository http://nl.alpinelinux.org/alpine/edge/testing \
       gnu-libiconv && \
    
-# install php for epg2xml.php
+# install intel driver for VAAPI and php7 for epg2xml.php
    apk --update add \
       --no-cache \
+      libva \
+      libva-intel-driver \
       php7 \
       php7-json \
       php7-dom \
