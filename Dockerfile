@@ -40,7 +40,6 @@ RUN \
       libxslt-dev \
       libva-dev \
       opus-dev \
-      opus-tools \
       make \
       mercurial \
       libressl-dev \
@@ -144,16 +143,15 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
-      #--build=x86_64-pc-linux-gnu
-      #--host=x86_64-pc-linux-gnu \
+      --enable-libva \
+      --enable-vaapi \
       --prefix=/usr \
       --mandir=/usr/share/man \
       --infodir=/usr/share/info \
       --datadir=/usr/share \
-      --sysconfdir=/etc \
+      --sysconfdir=/home/tv/cfg \
       --localstatedir=/var/lib \
-      --libdir=/usr/lib64 \
-      --enable-vaapi && \
+      --libdir=/usr/lib64 && \
    make && \
    make install && \
 
