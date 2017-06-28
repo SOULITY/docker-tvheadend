@@ -148,7 +148,6 @@ RUN \
       --enable-libav \
       --enable-libx264 \
       --enable-libx265 \
-      --enable-libfdkaac \
       --enable-vaapi \
       --infodir=/usr/share/info \
       --localstatedir=/var \
