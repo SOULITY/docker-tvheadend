@@ -144,13 +144,14 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
-      --enable-libav \
       --enable-vaapi \
-      --infodir=/usr/share/info \
-      --localstatedir=/var \
-      --mandir=/usr/share/man \
       --prefix=/usr \
-      --sysconfdir=/home/tv/cfg && \
+      --mandir=/usr/share/man \
+      --infodir=/usr/share/info \
+      --datadir=/usr/share \
+      --sysconfdir=/home/tv/cfg \
+      --localstatedir=/var/lib \
+      --libdir=/usr/lib64 && \
    make && \
    make install && \
 
