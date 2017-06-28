@@ -216,7 +216,7 @@ RUN \
 # install php for epg2xml.php
    apk add \
       --no-cache \
-      php7-cli \
+      php7 \
       php7-json \
       php7-dom \
       php7-mbstring \
