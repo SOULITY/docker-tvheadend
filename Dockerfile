@@ -144,11 +144,13 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
+      #--build=x86_64-pc-linux-gnu
+      #--host=x86_64-pc-linux-gnu \
       --prefix=/usr \
       --mandir=/usr/share/man \
       --infodir=/usr/share/info \
       --datadir=/usr/share \
-      --sysconfdir=/home/tv/cfg \
+      --sysconfdir=/etc \
       --localstatedir=/var/lib \
       --libdir=/usr/lib64 \
       --enable-vaapi && \
