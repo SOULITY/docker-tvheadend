@@ -1,5 +1,5 @@
 # SOULITY/tvheadend-vaapi-kor
-https://hub.docker.com/r/soulity/tvheadend-vaapi-kor \
+https://hub.docker.com/r/soulity/tvheadend-vaapi-kor
 
 Tvheadend with VAAPI for KOREAN. \
 This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
