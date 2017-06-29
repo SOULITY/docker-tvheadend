@@ -151,6 +151,7 @@ RUN \
       --disable-libx265_static \
       --enable-hdhomerun_client \
       --enable-libav \
+      --enable-vaapi \
       --infodir=/usr/share/info \
       --localstatedir=/var \
       --mandir=/usr/share/man \
