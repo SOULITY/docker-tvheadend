@@ -230,7 +230,7 @@ RUN \
    rm -rf \
       /home/tv/cfg/.cpanm \
       /tmp/* && \
-   ln -s /usr/bin/php7 /usr/bin/php
+   ln -sf /usr/bin/php7 /usr/bin/php
 
 # copy local files
 COPY root/ /
