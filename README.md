@@ -2,7 +2,7 @@
 Tvheadend with VAAPI for KOREAN. \
 This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
 
-Base-4.3 | latest \
+Base-4.3/latest \
 Tvheadend 4.3(Official) base. \
 You must use ffmpeg pipe.
 
@@ -22,7 +22,7 @@ docker create \
     -e TZ="Asia/Seoul" \
     -e PUID="<root or user uid(ex. 1026)>" \
     -e PGID="<root or user gid(ex. 100)>" \
-    -it soulity/tvheadend-vaapi-kor:latest or Base-4.1p1 or Base-4.3p1
+    -it soulity/tvheadend-vaapi-kor:<latest/Base-4.1p1/Base-4.3p1>
 ```
 
 ## Informations
