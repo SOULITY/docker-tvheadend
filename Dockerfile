@@ -224,7 +224,6 @@ RUN \
       php7-mbstring \
       php7-openssl \
       php7-curl && \
-   ln -s /usr/bin/php7 /usr/bin/php && \
 
 # cleanup
    apk del \
@@ -232,7 +231,8 @@ RUN \
       build-dependencies && \
    rm -rf \
       /home/tv/cfg/.cpanm \
-      /tmp/*
+      /tmp/* && \
+   ln -s /usr/bin/php7 /usr/bin/php
 
 # copy local files
 COPY root/ /
