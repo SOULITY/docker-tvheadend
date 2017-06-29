@@ -8,7 +8,7 @@ You must use ffmpeg pipe.
 
 Base-4.1 \
 Tvheadend 4.1(lekma custom+codec) base. \
-You can use the VA-API codec profile in Tvheadend.
+You can use the VA-API codec profile in Tvheadend. \
 Also, can use ffmpeg pipe.
 
 ## Usage
