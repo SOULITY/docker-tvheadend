@@ -144,6 +144,7 @@ RUN \
    git checkout codecs && \
    ./configure \
       #--enable-ffmpeg \
+      --enable-hdhomerun_client \
       --enable-ffmpeg_static \
       --enable-libffmpeg_static \
       --enable-libx264 \
