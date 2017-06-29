@@ -3,10 +3,12 @@ Tvheadend with VAAPI for KOREAN. \
 This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
 
 Base-4.3(latest) \
-Tvheadend 4.3(Official) base. \
+Tvheadend 4.3(Official) base.
+You must use ffmpeg pipe.
+
 Base-4.1 \
-Tvheadend 4.1(lekma custom) base. \
-** This docker is being tested. DO NOT USE.
+Tvheadend 4.1(lekma custom+codec) base. \
+You can use the VA-API codec profile in Tvheadend.
 
 ## Usage
 
