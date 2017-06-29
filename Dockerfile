@@ -143,11 +143,12 @@ RUN \
    cd /tmp/tvheadend && \
    git checkout codecs && \
    ./configure \
-      --enable-ffmpeg \
+      #--enable-ffmpeg \
       --enable-ffmpeg_static \
-      --enable-libav \
+      --enable-libffmpeg_static \
       --enable-libx264 \
       --enable-libx265 \
+      --enable-libav \
       --enable-vaapi \
       --infodir=/usr/share/info \
       --localstatedir=/var \
