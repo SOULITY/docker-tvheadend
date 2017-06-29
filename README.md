@@ -2,8 +2,8 @@
 Tvheadend with VAAPI for KOREAN. \
 This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
 
-Base-4.3 | latest
-Tvheadend 4.3(Official) base.
+Base-4.3 | latest \
+Tvheadend 4.3(Official) base. \
 You must use ffmpeg pipe.
 
 Base-4.1 \
