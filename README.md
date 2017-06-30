@@ -25,7 +25,7 @@ docker create \
     -e TZ="Asia/Seoul" \
     -e PUID="<root or user uid(ex. 1026)>" \
     -e PGID="<root or user gid(ex. 100)>" \
-    -it soulity/tvheadend-vaapi-kor:<latest/Base-4.1p1/Base-4.3p1>
+    -it soulity/tvheadend-vaapi-kor:<latest|Base-4.1p1|Base-4.3p1>
 ```
 
 ## Informations
