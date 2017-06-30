@@ -1,4 +1,6 @@
 # SOULITY/tvheadend-vaapi-kor
+https://hub.docker.com/r/soulity/tvheadend-vaapi-kor
+
 Tvheadend with VAAPI for KOREAN. \
 This docker based on <lsiobase/alpine>, <linuxserver/docker-tvheadend>
 
@@ -8,7 +10,8 @@ You must use ffmpeg pipe.
 
 Base-4.1 \
 Tvheadend 4.1(lekma custom+codec) base. \
-You can use the VA-API codec profile in Tvheadend.
+You can use the VA-API codec profile in Tvheadend. \
+Also, can use ffmpeg pipe.
 
 ## Usage
 
@@ -22,7 +25,7 @@ docker create \
     -e TZ="Asia/Seoul" \
     -e PUID="<root or user uid(ex. 1026)>" \
     -e PGID="<root or user gid(ex. 100)>" \
-    -it soulity/tvheadend-vaapi-kor:<latest/Base-4.1p1/Base-4.3p1>
+    -it soulity/tvheadend-vaapi-kor:<latest|Base-4.1p1|Base-4.3p1>
 ```
 
 ## Informations
