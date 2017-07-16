@@ -1,17 +1,17 @@
 FROM lsiobase/alpine:latest
 MAINTAINER SOULITY
 
+# set version label
+ARG BUILD_DATE
+ARG VERSION
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+
 # package version
 ARG TZ="Asia/Seoul"
 ARG ARGTABLE_VER="2.13"
 ARG XMLTV_VER="0.5.69"
 
-# set version label
-ARG BUILD_DATE
-ARG VERSION
-LABEL build_version="Build-date:- ${BUILD_DATE}"
-
-# environment settings
+# Environment settings
 ENV HOME="/home/tv/cfg"
 
 # copy patches
@@ -25,7 +25,6 @@ RUN \
       autoconf \
       automake \
       cmake \
-      coreutils \
       ffmpeg-dev \
       file \
       findutils \
@@ -33,14 +32,14 @@ RUN \
       gcc \
       gettext-dev \
       git \
-      libhdhomerun-dev \
       libgcrypt-dev \
+      libhdhomerun-dev \
+      libressl-dev \
       libtool \
       libxml2-dev \
       libxslt-dev \
       make \
       mercurial \
-      libressl-dev \
       patch \
       pcre2-dev \
       perl-dev \
@@ -61,11 +60,16 @@ RUN \
       bsd-compat-headers \
       bzip2 \
       curl \
+      ffmpeg \
+      ffmpeg-libs \
       gzip \
       libcrypto1.0 \
-      libcurl	\
+      libcurl      \
+      libhdhomerun-libs \
       libressl \
       libssl1.0 \
+      libxml2 \
+      libxslt \
       linux-headers \
       pcre2 \
       perl \
@@ -125,6 +129,10 @@ RUN \
       uriparser \
       wget \
       zlib && \
+   apk --update add \
+      --no-cache \
+      --repository http://nl.alpinelinux.org/alpine/edge/testing \
+      gnu-libiconv && \
 
 # install perl modules for xmltv
    curl -L http://cpanmin.us | perl - App::cpanminus && \
@@ -168,7 +176,7 @@ RUN \
       xf /tmp/xmtltv-src.tar.bz2 \
       -C /tmp --strip-components=1 && \
    cd "/tmp/xmltv-${XMLTV_VER}" && \
-   /bin/echo -e "yes" | perl Makefile.PL PREFIX=/usr/ INSTALLDIRS=vendor && \
+   echo -e "yes" | perl Makefile.PL PREFIX=/usr/ INSTALLDIRS=vendor && \
    make && \
    make test && \
    make install && \
@@ -184,6 +192,7 @@ RUN \
       xf /tmp/argtable-src.tar.gz \
       -C /tmp/argtable \
       --strip-components=1 && \
+   cp /tmp/patches/config.* /tmp/argtable && \
    cd /tmp/argtable && \
    ./configure \
       --prefix=/usr && \
@@ -201,19 +210,6 @@ RUN \
    make && \
    make install && \
 
-# install runtime packages
-   apk --update add \
-      --no-cache \
-      ffmpeg \
-      ffmpeg-libs \
-      libhdhomerun-libs \
-      libxml2 \
-      libxslt && \
-   apk --update add \
-      --no-cache \
-      --repository http://nl.alpinelinux.org/alpine/edge/testing \
-      gnu-libiconv && \
-   
 # install intel driver for VAAPI and php7 for epg2xml.php
    apk --update add \
       --no-cache \
