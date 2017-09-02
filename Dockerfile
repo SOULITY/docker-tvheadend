@@ -136,12 +136,13 @@ RUN \
       wget \
       x264 \
       x265 \
-      zlib && \
+      zlib \
+      libva \
+      libva-intel-driver && \
    apk --update add \
       --no-cache \
       --repository http://nl.alpinelinux.org/alpine/edge/testing \
-      gnu-libiconv
-RUN \
+      gnu-libiconv && \
 
 # install perl modules for xmltv
    curl -L http://cpanmin.us | perl - App::cpanminus && \
@@ -222,8 +223,6 @@ RUN \
 # install intel driver for VAAPI and php7 for epg2xml.php
    apk --update add \
       --no-cache \
-      libva \
-      libva-intel-driver \
       php7 \
       php7-json \
       php7-dom \
