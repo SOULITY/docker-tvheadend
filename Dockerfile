@@ -140,7 +140,8 @@ RUN \
    apk --update add \
       --no-cache \
       --repository http://nl.alpinelinux.org/alpine/edge/testing \
-      gnu-libiconv && \
+      gnu-libiconv
+RUN \
 
 # install perl modules for xmltv
    curl -L http://cpanmin.us | perl - App::cpanminus && \
