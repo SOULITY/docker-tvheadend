@@ -5,7 +5,7 @@ cflag=
 qflag=
 if (( $# < 1 ))
 then
-  cat /home/tv/cfg/data/*.xml
+  cat /config/data/*.xml
   exit 0
 fi
 
