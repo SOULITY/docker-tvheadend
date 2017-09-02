@@ -36,10 +36,12 @@ RUN \
       libhdhomerun-dev \
       libressl-dev \
       libtool \
+      libvpx-dev \
       libxml2-dev \
       libxslt-dev \
       make \
       mercurial \
+      opus-dev \
       patch \
       pcre2-dev \
       perl-dev \
@@ -47,6 +49,8 @@ RUN \
       sdl-dev \
       uriparser-dev \
       wget \
+      x264-dev \
+      x265-dev \
       zlib-dev && \
    apk --update add \
       --no-cache \
@@ -68,9 +72,11 @@ RUN \
       libhdhomerun-libs \
       libressl \
       libssl1.0 \
+      libvpx \
       libxml2 \
       libxslt \
       linux-headers \
+      opus \
       pcre2 \
       perl \
       perl-archive-zip \
@@ -128,6 +134,8 @@ RUN \
       tar \
       uriparser \
       wget \
+      x264 \
+      x265 \
       zlib && \
    apk --update add \
       --no-cache \
